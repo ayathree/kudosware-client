@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { FaUpload } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const Nav = () => {
@@ -48,7 +49,7 @@ const Nav = () => {
 
             <div className="flex justify-center md:block">
                 <a className="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" href="#">
-                    <button className="bg-red-500 p-2 text-white rounded-md ">Sing Up</button>
+                   <Link to={'/signUp'}> <button className="bg-red-500 p-2 text-white rounded-md ">Sing Up</button></Link>
                 </a>
             </div>
         </div>
