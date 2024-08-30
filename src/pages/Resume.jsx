@@ -7,51 +7,51 @@ const Resume = () => {
             <h1 className="text-5xl font-bold">Your dream Job
                 <br />
                  <span className="text-3xl text-red-500" >Is Near to You</span></h1>
-            <img className='rounded-l-full' src={resume} alt="" />
+            <img className='hidden lg:block rounded-l-full' src={resume} alt="" />
             </div>
             {/* resume */}
-            <div className='m-10'>
-                <div className='border-2 border-black p-7 '>
-                   <div className='flex justify-between items-center'>
-                   <h1 className='text-3xl uppercase'>Personal Information</h1>
+            <div className='md:m-10'>
+                <div className='border-2 border-black md:p-7 p-2 '>
+                   <div className='flex flex-col md:flex-row justify-between items-center'>
+                   <h1 className='md:text-3xl uppercase'>Personal Information</h1>
                    <button className='bg-red-500 p-2 text-white rounded-md hover:bg-black'>Upload Your CV</button>
                    </div>
                    {/* personal info div */}
-                   <div className='flex justify-between items-center gap-4 '>
-                   <input type="text" placeholder='First name' className="my-4  border w-1/2 border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
-                   <input type="text" placeholder='Last name' className="my-4  border w-1/2  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+                   <div className='flex flex-col md:flex-row justify-between items-center md:gap-4 '>
+                   <input type="text" placeholder='First name' className="md:my-4 my-2 w-full  border md:w-1/2 border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+                   <input type="text" placeholder='Last name' className="md:my-4 w-full  border md:w-1/2  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
                    </div>
                    {/* div 2 */}
-                   <div className='flex justify-between items-center gap-4 ' >
-                   <input type="date" placeholder='' className="my-4   border w-1/2 border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
-                   <input type="number" placeholder='your number' className="my-4 border w-1/2  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+                   <div className='flex flex-col md:flex-row justify-between items-center md:gap-4 ' >
+                   <input type="date" placeholder='' className="md:my-4 my-2  border md:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+                   <input type="number" placeholder='your number' className="md:my-4 border md:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
                    </div>
                    {/* div 3 */}
-                   <div className='flex justify-between items-center gap-4 '>
-                   <input type="text" placeholder='Address' className="my-4   border w-1/2 border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
-                   <input type="text" placeholder='Designation' className="my-4 border w-1/2  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+                   <div className='flex flex-col md:flex-row justify-between items-center md:gap-4 '>
+                   <input type="text" placeholder='Address' className="md:my-4 my-2 w-full border md:w-1/2 border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+                   <input type="text" placeholder='Designation' className="md:my-4 border md:w-1/2 w-full  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
                    </div>
                    {/* div 4 */}
-                   <div className='flex justify-between items-center gap-4 '>
-                   <select className=" my-4 border w-1/2  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                   <div className='flex flex-col md:flex-row justify-between items-center md:gap-4'>
+                   <select className=" md:my-4 my-2 border md:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
   <option disabled selected>Age</option>
   <option>20-25</option>
   <option>26-30</option>
   <option>30-35</option>
 </select>
-<select className=" my-4 border w-1/2  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+<select className=" md:my-4  border md:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
   <option disabled selected>Gender</option>
   <option>Male</option>
   <option>Female</option>
   <option>Other</option>
 </select>
-<select className=" my-4 border w-1/2  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+<select className="md:my-4 my-2 border md:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
   <option disabled selected>Current Salary</option>
   <option>10k-40k</option>
   <option>41k-60k</option>
   <option>61k-higher</option>
 </select>
-<select className=" my-4 border w-1/2  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+<select className=" md:my-4  border md:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
   <option disabled selected>Expectation</option>
   <option>10k-40k</option>
   <option>41k-60k</option>
@@ -61,7 +61,7 @@ const Resume = () => {
 </div>
 {/* div 5 */}
 <div>
-<textarea type="text" placeholder='About me' className="  border block w-full h-48  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+<textarea type="text" placeholder='About me' className=" my-2 md:my-0 border block w-full h-48  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
 
 </div>
 
