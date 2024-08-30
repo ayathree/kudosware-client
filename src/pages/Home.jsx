@@ -42,7 +42,7 @@ const Home = () => {
         </div>
         {/* div 3 */}
         <h1 className='text-5xl font-bold text-center mt-36'>Our Job <span className='text-red-500'>Process</span></h1>
-        <div className='flex flex-row justify-center items-center mt-16'>
+        <div className='flex flex-row justify-center items-center my-16'>
             <div className='border border-white w-full h-[220px] p-10 hover:shadow-2xl'>
            <div className='flex justify-center items-center'>
            <IoIosPeople className='text-4xl' />
@@ -71,7 +71,8 @@ const Home = () => {
             
 
         </div>
-        {/* div 4 */}
+       
+
         </div>
     );
 };
