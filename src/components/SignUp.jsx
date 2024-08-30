@@ -2,6 +2,17 @@ import { Link } from 'react-router-dom';
 import banner from '../assets/image/singup banner.png'
 
 const SignUp = () => {
+    const handleSignUp=e=>{
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const role = form.role.value;
+        const gender = form.gender.value;
+        const signUpMember={name,email,password,role,gender}
+        console.log(signUpMember)
+    }
     return (
         <div className="mt-5">
             <div className='flex justify-between items-center'>
@@ -14,47 +25,49 @@ const SignUp = () => {
             <div className='mt-20 mb-5 text-center text-4xl font-bold'>
             <h1 className='uppercase '>Registration</h1>
             </div>
+            <form onSubmit={handleSignUp} >
             <div className='flex justify-center items-center mb-5'>
 
-    <input type="email" placeholder='Your Email' className="mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
-    
+<input type="email" name='email' placeholder='Your Email' className="mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+
 </div>
 <div className='flex justify-center items-center mb-5'>
 
-    <input type="text" placeholder='Your Full Name' className="mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
-    
+<input type="text" name='name' placeholder='Your Full Name' className="mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+
 </div>
 <div className='flex justify-center items-center mb-5'>
 
-    <input type="password" placeholder='Your Password' className="mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
-    
+<input type="password" name='password' placeholder='Your Password' className="mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+
 </div>
 <div className='flex justify-center items-center mb-5'>
 
-<select className="select select-bordered  mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
-  <option disabled selected>Your Role</option>
-  <option>Web Developer</option>
-  <option>Product Manager</option>
-  <option>Software Engineer</option>
+<select name='role' className="select select-bordered  mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+<option value='' disabled selected>Your Role</option>
+<option value='Web Developer'>Web Developer</option>
+<option value='Product Manager'>Product Manager</option>
+<option value='Software Engineer'>Software Engineer</option>
 </select>
-    
+
 </div>
 <div className='flex justify-center items-center mb-5'>
 
-<select className="select select-bordered  mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
-  <option disabled selected>Your Gender</option>
-  <option>Male</option>
-  <option>Female</option>
-  <option>Other</option>
+<select name='gender' className="select select-bordered  mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+<option value='' disabled selected>Your Gender</option>
+<option value='Male'>Male</option>
+<option value='Female'>Female</option>
+<option value='Other'>Other</option>
 </select>
-    
+
 </div>
 
 <div className='flex justify-center items-center mb-5'>
 
-    <button  className="mt-2 rounded-lg border lg:w-1/2 w-full   bg-red-500 text-white px-5 py-2.5 hover:bg-black">Register</button>
-    
+<button  className="mt-2 rounded-lg border lg:w-1/2 w-full   bg-red-500 text-white px-5 py-2.5 hover:bg-black">Register</button>
+
 </div>
+            </form>
 
 {/* login */}
 <div className='lg:m-20 my-20 text-center'>
