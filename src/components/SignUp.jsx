@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 import banner from '../assets/image/singup banner.png'
+import { useContext, useState } from 'react';
+import { AuthContext } from '../routes/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignUp = () => {
+    const {createUser} = useContext(AuthContext);
+    const [errorRegister, setErrorRegister] = useState('')
+
     const handleSignUp=e=>{
         e.preventDefault();
         const form = e.target;
@@ -12,6 +18,22 @@ const SignUp = () => {
         const gender = form.gender.value;
         const signUpMember={name,email,password,role,gender}
         console.log(signUpMember)
+
+        setErrorRegister('');
+        
+
+        createUser(email, password)
+        .then(result=>{
+            toast.success('Successfully sign up')
+            e.target.reset();
+
+            console.log(result.user)
+        })
+        .catch(error=>{
+          setErrorRegister(error.message)
+            console.log(error)
+        })
+
     }
     return (
         <div className="mt-5">
@@ -36,11 +58,14 @@ const SignUp = () => {
 <input type="text" name='name' placeholder='Your Full Name' className="mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
 
 </div>
-<div className='flex justify-center items-center mb-5'>
+<div className='flex justify-center items-center mb-2'>
 
 <input type="password" name='password' placeholder='Your Password' className="mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
 
 </div>
+{
+            errorRegister && <p className="text-red-600 flex justify-center items-center">{errorRegister}</p>
+          }
 <div className='flex justify-center items-center mb-5'>
 
 <select name='role' className="select select-bordered  mt-2 rounded-lg border lg:w-1/2 w-full border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
@@ -62,6 +87,8 @@ const SignUp = () => {
 
 </div>
 
+          
+
 <div className='flex justify-center items-center mb-5'>
 
 <button  className="mt-2 rounded-lg border lg:w-1/2 w-full   bg-red-500 text-white px-5 py-2.5 hover:bg-black">Register</button>
@@ -75,7 +102,7 @@ const SignUp = () => {
 
 </div>
 
-           
+<Toaster /> 
             
         </div>
     );
