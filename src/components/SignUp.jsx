@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import banner from '../assets/image/singup banner.png'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../routes/AuthProvider';
@@ -6,6 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const SignUp = () => {
     const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
     const [errorRegister, setErrorRegister] = useState('')
 
     const handleSignUp=e=>{
@@ -26,11 +27,13 @@ const SignUp = () => {
         .then(result=>{
             toast.success('Successfully sign up')
             e.target.reset();
+            navigate('/resume');
 
             console.log(result.user)
         })
         .catch(error=>{
           setErrorRegister(error.message)
+          toast.error("Sign up fail.")
             console.log(error)
         })
 

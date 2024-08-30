@@ -1,9 +1,14 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { FaUpload } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../routes/AuthProvider";
 
 
 const Nav = () => {
+    const {user, logOut} = useContext(AuthContext);
+    const handleLogout=()=>{
+        logOut();
+    }
     const[isOpen, setIsOpen]=useState(false)
     return (
         <div>
@@ -49,7 +54,15 @@ const Nav = () => {
 
             <div className="flex md:justify-center md:block">
                 <a className=" ">
-                   <Link to={'/signUp'}> <button className="bg-red-500 p-2 text-white rounded-md ">Sing Up</button></Link>
+                    {
+                        user ?<>
+                        <button onClick={handleLogout} className="bg-red-500 p-2 text-white rounded-md ">Sing Out</button>
+                        </>:<>
+                        <Link to={'/signUp'}> <button className="bg-red-500 p-2 text-white rounded-md ">Sing Up</button></Link>
+                        
+                        </>
+                    }
+                   
                 </a>
             </div>
         </div>

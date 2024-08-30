@@ -12,6 +12,7 @@ import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import Resume from './pages/Resume';
 import AuthProvider from './routes/AuthProvider';
+import Private from './routes/Private';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/resume',
-        element:<Resume></Resume>
+        element:<Private><Resume></Resume></Private>
       }
     ]
   },
