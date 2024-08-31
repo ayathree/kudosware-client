@@ -24,7 +24,7 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        return fetch('http://localhost:5000/users', {
+        return fetch('https://kudosware-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

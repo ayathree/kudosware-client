@@ -14,6 +14,7 @@ import Resume from './pages/Resume';
 import AuthProvider from './routes/AuthProvider';
 import Private from './routes/Private';
 import Profile from './pages/Profile';
+import ResumeProfile from './pages/ResumeProfile';
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,12 @@ const router = createBrowserRouter([
       {
         path:'/profile/:email',
         element:<Private><Profile></Profile></Private>,
-        loader:({params})=>fetch(`http://localhost:5000/userResume/${params.email}`)
+        loader:({params})=>fetch(`https://kudosware-server.vercel.app/userResume/${params.email}`)
+      },
+      {
+        path:'/resumeProfile/:email',
+        element:<Private><ResumeProfile></ResumeProfile></Private>,
+        loader:({params})=>fetch(`https://kudosware-server.vercel.app/profileResume/${params.email}`)
       }
     ]
   },
