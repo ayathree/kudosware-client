@@ -13,6 +13,7 @@ import LogIn from './components/LogIn';
 import Resume from './pages/Resume';
 import AuthProvider from './routes/AuthProvider';
 import Private from './routes/Private';
+import Profile from './pages/Profile';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,14 @@ const router = createBrowserRouter([
       },
       {
         path:'/resume',
-        element:<Private><Resume></Resume></Private>
+        element:<Private><Resume></Resume></Private>,
+       
+        
+      },
+      {
+        path:'/profile/:email',
+        element:<Private><Profile></Profile></Private>,
+        loader:({params})=>fetch(`http://localhost:5000/userResume/${params.email}`)
       }
     ]
   },

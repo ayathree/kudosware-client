@@ -1,6 +1,14 @@
+
+import { Link } from 'react-router-dom';
 import resume from '../assets/image/resume profile.png'
+import { AuthContext } from '../routes/AuthProvider';
+import { useContext } from 'react';
 
 const Resume = () => {
+  const {user} = useContext(AuthContext);
+
+  
+
     return (
         <div className='mt-5'>
             <div className='flex justify-between items-center'>
@@ -9,6 +17,7 @@ const Resume = () => {
                  <span className="text-3xl text-red-500" >Is Near to You</span></h1>
             <img className='hidden lg:block rounded-l-full' src={resume} alt="" />
             </div>
+           <Link to={`/profile/${user.email}`}> <button className='btn bg-red-500 text-white font-bold md:text-2xl hover:bg-black'>{user.email} PROFILE HERE</button></Link>
             {/* resume */}
             <div className='md:m-10'>
                 <div className='border-2 border-black md:p-7 p-2 my-10 md:my-0 '>
@@ -18,8 +27,8 @@ const Resume = () => {
                    </div>
                    {/* personal info div */}
                    <div className='flex flex-col md:flex-row justify-between items-center md:gap-4 '>
-                   <input type="text" placeholder='First name' className="md:my-4 my-2 w-full  border md:w-1/2 border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
-                   <input type="text" placeholder='Last name' className="md:my-4 w-full  border md:w-1/2  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+                   <input type="text" placeholder='name' className="md:my-4 my-2 w-full  border md:w-1/2 border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+                   <input type="email" placeholder='email'  className="md:my-4 w-full  border md:w-1/2  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
                    </div>
                    {/* div 2 */}
                    <div className='flex flex-col md:flex-row justify-between items-center md:gap-4 ' >
@@ -29,7 +38,7 @@ const Resume = () => {
                    {/* div 3 */}
                    <div className='flex flex-col md:flex-row justify-between items-center md:gap-4 '>
                    <input type="text" placeholder='Address' className="md:my-4 my-2 w-full border md:w-1/2 border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
-                   <input type="text" placeholder='Designation' className="md:my-4 border md:w-1/2 w-full  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+                   <input type="text" placeholder='Designation'  className="md:my-4 border md:w-1/2 w-full  border-black bg-white px-5 py-2.5  focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
                    </div>
                    {/* div 4 */}
                    <div className='flex flex-col md:flex-row justify-between items-center md:gap-4'>
